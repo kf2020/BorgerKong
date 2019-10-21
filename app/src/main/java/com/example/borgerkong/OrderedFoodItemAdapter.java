@@ -56,11 +56,15 @@ public class OrderedFoodItemAdapter extends RecyclerView.Adapter<OrderedFoodItem
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         final FoodItem foodItemAtPosition = mDataset.get(position);
+
+        holder.item_img.setImageResource(foodItemAtPosition.getImageId());
+
         int amt = foodItemAtPosition.getNumInOrder();
         holder.name.setText(foodItemAtPosition.getItemName());
 
         double totalPrice = amt * foodItemAtPosition.getNumericPrice();
-        holder.price.setText("A$" + String.format("%.2f", totalPrice));
+        String price = "A$" + String.format("%.2f", totalPrice);
+        holder.price.setText(price);
 
         String numOrdered = "Amt: "+ amt;
         holder.num_ordered.setText(numOrdered);

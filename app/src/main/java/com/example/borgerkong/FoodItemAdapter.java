@@ -56,7 +56,8 @@ public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.FoodIt
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         final FoodItem foodItemAtPosition = mDataset.get(position);
-        //holder.header_img.setImageResource(articleAtPosition.getImageDrawableId());
+
+        holder.item_img.setImageResource(foodItemAtPosition.getImageId());
         holder.item_img.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Context context = v.getContext();

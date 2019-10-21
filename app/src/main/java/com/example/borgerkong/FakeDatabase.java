@@ -42,7 +42,7 @@ public class FakeDatabase {
     static {
         menu.put(1, new FoodItem(
                 1,
-                 R.drawable.onion_rings,
+                 R.drawable.hamburger,
                 "Hamburger",
                 3.50,
                 "I am a hamburger.",
@@ -50,8 +50,99 @@ public class FakeDatabase {
 
         menu.put(2, new FoodItem(
                 2,
-                R.drawable.onion_rings,
+                R.drawable.cheeseburger,
                 "Cheeseburger",
+                3.99,
+                "I am a cheeseburger.",
+                0));
+        menu.put(3, new FoodItem(
+                3,
+                R.drawable.whopper,
+                "Bopper",
+                3.99,
+                "I am a cheeseburger.",
+                0));
+        menu.put(4, new FoodItem(
+                4,
+                R.drawable.whopper_jr,
+                "Bopper Jr.",
+                3.99,
+                "I am a cheeseburger.",
+                0));
+        menu.put(5, new FoodItem(
+                5,
+                R.drawable.bacon_cheeseburger,
+                "Bacon Cheeseburger",
+                3.99,
+                "I am a cheeseburger.",
+                0));
+        menu.put(6, new FoodItem(
+                6,
+                R.drawable.jalapeno_sandwich,
+                "Jalapeno Sandwich",
+                3.99,
+                "I am a cheeseburger.",
+                0));
+        menu.put(7, new FoodItem(
+                7,
+                R.drawable.quarter_pounder,
+                "Quarter Pounder",
+                3.99,
+                "I am a cheeseburger.",
+                0));
+        menu.put(8, new FoodItem(
+                8,
+                R.drawable.grilled_chicken_sandwich,
+                "Grilled Chicken Sandwich",
+                3.99,
+                "I am a cheeseburger.",
+                0));
+        menu.put(9, new FoodItem(
+                9,
+                R.drawable.crispy_chicken_sandwich,
+                "Crispy Chicken Sandwich",
+                3.99,
+                "I am a cheeseburger.",
+                0));
+        menu.put(10, new FoodItem(
+                10,
+                R.drawable.spicy_chicken_sandwich,
+                "Spicy Chicken Sandwich",
+                3.99,
+                "I am a cheeseburger.",
+                0));
+        menu.put(11, new FoodItem(
+                11,
+                R.drawable.chicken_fries,
+                "Chicken Fries",
+                3.99,
+                "I am a cheeseburger.",
+                0));
+        menu.put(12, new FoodItem(
+                12,
+                R.drawable.chicken_nuggets,
+                "Chicken Nuggets",
+                3.99,
+                "I am a cheeseburger.",
+                0));
+        menu.put(13, new FoodItem(
+                13,
+                R.drawable.french_fries,
+                "French Fries",
+                3.99,
+                "I am a cheeseburger.",
+                0));
+        menu.put(14, new FoodItem(
+                14,
+                R.drawable.onion_rings,
+                "Onion Rings",
+                3.99,
+                "I am a cheeseburger.",
+                0));
+        menu.put(15, new FoodItem(
+                15,
+                R.drawable.vanilla_soft_serve,
+                "Vanilla Soft Serve",
                 3.99,
                 "I am a cheeseburger.",
                 0));
