@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.NumberPicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -34,7 +35,7 @@ public class ItemDetailActivity extends AppCompatActivity {
         TextView description = findViewById(R.id.item_description);
         ImageView itemImg = findViewById(R.id.item_img);
 
-        FoodItem currItem = FakeDatabase.getItemById(itemId);
+        final FoodItem currItem = FakeDatabase.getItemById(itemId);
         name.setText(currItem.getItemName());
         price.setText(currItem.getPriceS());
         description.setText(currItem.getDescription());
@@ -48,8 +49,11 @@ public class ItemDetailActivity extends AppCompatActivity {
         Button add = findViewById(R.id.add_btn);
         add.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                int currNum = FakeDatabase.getItemById(itemId).getNumInOrder();
-                FakeDatabase.getItemById(itemId).setNumInOrder(currNum + np.getValue());
+                int currNum = currItem.getNumInOrder();
+                currItem.setNumInOrder(currNum + np.getValue());
+
+                String message = "Added " + np.getValue() + " " + currItem.getItemName() + "(s) to your order!";
+                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
             }
         });
 

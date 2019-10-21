@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.FoodIt
         public ImageView item_img;
         public TextView name;
         public TextView price;
+        public ConstraintLayout food_item_container;
 
         public FoodItemViewHolder(View v) {
             super(v);
@@ -27,6 +29,7 @@ public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.FoodIt
             item_img = v.findViewById(R.id.item_img);
             name = v.findViewById(R.id.name);
             price = v.findViewById(R.id.price);
+            food_item_container = v.findViewById(R.id.food_item_container);
         }
     }
 
@@ -58,7 +61,7 @@ public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.FoodIt
         final FoodItem foodItemAtPosition = mDataset.get(position);
 
         holder.item_img.setImageResource(foodItemAtPosition.getImageId());
-        holder.item_img.setOnClickListener(new View.OnClickListener() {
+        holder.food_item_container.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Context context = v.getContext();
                 Intent intent = new Intent(context, ItemDetailActivity.class);

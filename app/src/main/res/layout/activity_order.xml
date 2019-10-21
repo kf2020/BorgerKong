@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginBottom="70dp">
+        android:paddingBottom="75dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/food_item_recycler_view"
