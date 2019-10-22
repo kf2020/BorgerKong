@@ -1,11 +1,16 @@
 package com.example.borgerkong;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -19,6 +24,8 @@ public class OrderedFoodItemAdapter extends RecyclerView.Adapter<OrderedFoodItem
         public TextView name;
         public TextView price;
         public TextView num_ordered;
+        public Button remove_btn;
+        public ConstraintLayout overall_item;
 
         public OrderedFoodItemViewHolder(View v) {
             super(v);
@@ -27,6 +34,8 @@ public class OrderedFoodItemAdapter extends RecyclerView.Adapter<OrderedFoodItem
             name = v.findViewById(R.id.name);
             price = v.findViewById(R.id.price);
             num_ordered = v.findViewById(R.id.num_ordered);
+            remove_btn = v.findViewById(R.id.remove_btn);
+            overall_item = v.findViewById(R.id.ordered_food_item_container);
         }
     }
 
@@ -52,7 +61,7 @@ public class OrderedFoodItemAdapter extends RecyclerView.Adapter<OrderedFoodItem
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(OrderedFoodItemViewHolder holder, final int position) {
+    public void onBindViewHolder(final OrderedFoodItemViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         final FoodItem foodItemAtPosition = mDataset.get(position);
@@ -68,6 +77,15 @@ public class OrderedFoodItemAdapter extends RecyclerView.Adapter<OrderedFoodItem
 
         String numOrdered = "Amt: "+ amt;
         holder.num_ordered.setText(numOrdered);
+
+        holder.remove_btn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                foodItemAtPosition.setNumInOrder(0);
+                String message = "Removed " + foodItemAtPosition.getItemName() + "(s) from your order. ";
+                Toast.makeText(v.getContext(), message, Toast.LENGTH_LONG).show();
+                holder.overall_item.setVisibility(View.GONE);
+            }
+        });
     }
 
     // Return the size of your dataset (invoked by the layout manager)

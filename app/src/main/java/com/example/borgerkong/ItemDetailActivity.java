@@ -53,7 +53,7 @@ public class ItemDetailActivity extends AppCompatActivity {
                 currItem.setNumInOrder(currNum + np.getValue());
 
                 String message = "Added " + np.getValue() + " " + currItem.getItemName() + "(s) to your order!";
-                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
             }
         });
 

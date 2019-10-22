@@ -33,7 +33,7 @@ public class OrderActivity extends AppCompatActivity {
         recyclerView.setAdapter(mAdapter);
 
         Button total = findViewById(R.id.total);
-        String payBtnText = "Total A$" + String.format("%.2f",FakeDatabase.getTotalOrderPrice());
+        String payBtnText = "Total $" + String.format("%.2f",FakeDatabase.getTotalOrderPrice());
         total.setText(payBtnText);
     }
 }

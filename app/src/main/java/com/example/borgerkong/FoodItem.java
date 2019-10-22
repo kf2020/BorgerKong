@@ -48,7 +48,7 @@ public class FoodItem {
     }
 
     public String getPriceS() {
-        return "A$" + String.format("%.2f", price);
+        return "$" + String.format("%.2f", price);
     }
 
     public double getNumericPrice() {
