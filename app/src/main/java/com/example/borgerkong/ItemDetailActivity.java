@@ -50,9 +50,12 @@ public class ItemDetailActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 int currNum = currItem.getNumInOrder();
-                currItem.setNumInOrder(currNum + np.getValue());
+                int numAddedToOrder = np.getValue();
+                currItem.setNumInOrder(currNum + numAddedToOrder);
+                double totalAdded = numAddedToOrder * currItem.getNumericPrice();
 
-                String message = "Added " + np.getValue() + " " + currItem.getItemName() + "(s) to your order!";
+                String message = "Added " + numAddedToOrder + " " + currItem.getItemName() + "(s) " +
+                        "to your order! Total added: $" + String.format("%.2f", totalAdded);
                 Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
             }
         });
